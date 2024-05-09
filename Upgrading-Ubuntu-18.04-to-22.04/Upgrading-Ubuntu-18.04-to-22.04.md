@@ -8,8 +8,15 @@
 <p>I’ve got a requested to upgrade a Ubuntu 18.04 to 22.04, this document outlines the process of upgrading an Ubuntu 18.04 virtual machine (VM) to 22.04 on Microsoft Azure. Recorded the step and command on my Azure Lab Environment.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>An active Microsoft Azure account with an existing Ubuntu 18.04 VM.<br>
-<img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-1.png" alt="Screenshot-1"></li>
+<li>An active Microsoft Azure account with an existing Ubuntu 18.04 VM.</li>
+</ul>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-1.png" alt="Screenshot-1"></p>
+</blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-2.png" alt="Screenshot-2"></p>
+<blockquote></blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-3.png" alt="Screenshot-3"></p>
+<ul>
 <li>Basic familiarity with the Linux command line.</li>
 <li>Administrative access to the Ubuntu 18.04 VM.</li>
 </ul>
