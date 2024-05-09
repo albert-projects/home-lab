@@ -9,7 +9,7 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>An active Microsoft Azure account with an existing Ubuntu 18.04 VM.<br>
-<img src="Upgrading-Ubuntu-18.04-to-22.04/Screenshot-1.png" alt="Screenshot-1"></li>
+<img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-1.png" alt="Screenshot-1"></li>
 <li>Basic familiarity with the Linux command line.</li>
 <li>Administrative access to the Ubuntu 18.04 VM.</li>
 </ul>
