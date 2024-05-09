@@ -23,6 +23,9 @@
 <li>Basic familiarity with the Linux command line.</li>
 <li>Administrative access to the Ubuntu 18.04 VM.</li>
 </ul>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-4.png" alt="Screenshot-4"></p>
+</blockquote>
 <h2 id="upgrade-procedure">Upgrade Procedure</h2>
 <p>Back Up Your Data:</p>
 <ul>
@@ -52,10 +55,16 @@ to secure your data.</li>
 <ul>
 <li><em>Ensure System Health</em></li>
 </ul>
-<p><code>sudo apt update</code><br>
+<p><code>sudo apt update</code></p>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-5.png" alt="Screenshot-5"><br>
 <code>sudo apt upgrade</code><br>
+<img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-6.png" alt="Screenshot-6"><br>
 <code>sudo apt dist-upgrade</code><br>
-<code>sudo apt autoremove</code></p>
+<img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-7.png" alt="Screenshot-7"><br>
+<code>sudo apt autoremove</code><br>
+ScreenRecording1.gif</p>
+</blockquote>
 <ul>
 <li><em>Remove Unnecessary PPAs</em></li>
 </ul>
@@ -64,6 +73,12 @@ to secure your data.</li>
 <li><em>Document Installed Softwares (Copy to local machine)</em></li>
 </ul>
 <p><code>dpkg --get-selections | sudo tee installed-software.txt &gt; /dev/null</code></p>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-10.png" alt="Screenshot-10"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/ScreenRecording1.gif" alt="ScreenRecording1"></p>
+</blockquote>
 <h2 id="upgrade-to-v20.04">Upgrade to v20.04</h2>
 <blockquote>
 <p>Upgrading from one LTS version of Ubuntu to another LTS version typically requires stepping through the intermediate LTS versions, which means going from 18.04 to 20.04, then to 22.04.</p>
@@ -71,8 +86,26 @@ to secure your data.</li>
 <ul>
 <li><em>Start the Upgrade:</em></li>
 </ul>
-<p><code>sudo apt install update-manager-core</code><br>
+<p><code>sudo apt install update-manager-core</code></p>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-11.png" alt="Screenshot-11"><br>
 <code>sudo do-release-upgrade</code></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-12.png" alt="Screenshot-12"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-13.png" alt="Screenshot-13"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-14.png" alt="Screenshot-14"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-15.png" alt="Screenshot-15"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/ScreenRecording2.gif" alt="ScreenRecording2"></p>
+</blockquote>
 <ul>
 <li><em>Follow the instructions and prompts, review and approve proposed changes:</em></li>
 <li><em>Reboot once complete</em></li>
@@ -82,6 +115,9 @@ to secure your data.</li>
 <li><em>Check the Ubuntu version to ensure you’re now on 20.04:</em></li>
 </ul>
 <p><code>lsb_release -a</code></p>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-16.png" alt="Screenshot-16"></p>
+</blockquote>
 <ul>
 <li><em>Check System Health (repeat of earlier step, but it’s good to ensure all is well):</em></li>
 </ul>
@@ -94,6 +130,12 @@ to secure your data.</li>
 <li><em>Start the Upgrade:</em></li>
 </ul>
 <p><code>sudo do-release-upgrade</code></p>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-17.png" alt="Screenshot-17"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/ScreenRecording3.gif" alt="ScreenRecording3"></p>
+</blockquote>
 <ul>
 <li><em>As before, follow the instructions and prompts, review and approve proposed changes:</em></li>
 <li><em>Reboot once complete</em></li>
@@ -103,6 +145,9 @@ to secure your data.</li>
 <li><em>Check the Ubuntu version to ensure you’re now on 22.04:</em></li>
 </ul>
 <p><code>lsb_release -a</code></p>
+<blockquote>
+<p><img src="https://github.com/albert-projects/linux-administration/blob/33a0b84781fc922aa1fe52f2be55c5dbe7997db4/Upgrading-Ubuntu-18.04-to-22.04/Screenshot-18.png" alt="Screenshot-18"></p>
+</blockquote>
 <ul>
 <li><em>Check System Health</em></li>
 </ul>
