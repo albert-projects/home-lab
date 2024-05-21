@@ -21,7 +21,7 @@
 <span class="token punctuation">(</span><span class="token namespace">[ADSI]</span><span class="token variable">$group</span><span class="token punctuation">)</span><span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token variable">$member</span><span class="token punctuation">)</span>
 </code></pre>
 <p>The local Administrator group should look like this:</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites1.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites1.png" alt=""></p>
 <h3 id="configmgr-content-share-and-structure">ConfigMgr Content Share and Structure</h3>
 <p>We need to create a content share where the source files for our applications, packages and operating system images will be located. The script below will create the share along with an example structure. The LocalDrive variable at the top should be the disk letter assigned to the Content disk.</p>
 <pre class=" language-powershell"><code class="prism  language-powershell"><span class="token variable">$LocalDrive</span>=<span class="token string">"F:"</span>
@@ -127,31 +127,31 @@ New<span class="token operator">-</span>SmbShare <span class="token operator">-<
 <h3 id="windows-server-prerequisites">Windows Server Prerequisites</h3>
 <p>There are several roles and features like IIS we need to install, to make this easier Nickolaj Andersen has created an application called the  <a href="https://gallery.technet.microsoft.com/ConfigMgr-2012-R2-e52919cd">ConfigMgr Prerequisite Tool</a>  that installs the required components. Download and extract the tool, then run ConfigMgrPrerequisitesTool.exe as an administrator.</p>
 <p>On the left hand side select Settings then select Sources at the top. The Windows Server 2019 installation media should be in the DVD drive. Browse to the sources\sxs folder on the installation media.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites2.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites2.png" alt=""></p>
 <p>Switch to “Sites” on the left hand side and select “Preferences” from the top menu. Select all the drives EXCEPT for the Distribution Point disk (E:) and click “Create”. This creates a blank file called NO_SMS_ON_DRIVE.SMS at the root level of each selected disk. If Configuration Manager sees this file on a disk, the drive is ignored. This means that we are forcing Configuration Manager to only use the Distribution Point disk which is what we want.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites3.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites3.png" alt=""></p>
 <p>Change to the “Site Type” tab at the top. Then select “Primary Site” from the dropdown list and select the “Retry with alternate source location” box before pressing “Install”.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites4.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites4.png" alt=""></p>
 <p>Wait for the installation to complete, this could take a little while.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites5.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites5.png" alt=""></p>
 <p>Once the install has been completed press “Roles” on the left hand side. Select “Management Point” in the dropdown list and press “Install”.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites6.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites6.png" alt=""></p>
 <p>Repeat the process but this time select “Distribution Point” in the dropdown list.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites7.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ConfigMgr_Prerequisites7.png" alt=""></p>
 <h3 id="windows-10-assessment-and-deployment-kit-adk">Windows 10 Assessment and Deployment Kit (ADK)</h3>
 <p>The Windows 10 Assessment and Deployment Kit or ADK is a set of tools that can be used to customize and deploy Windows. The ADK can be  <a href="https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install">downloaded here</a>. At the time of writing the latest version of ADK is 1903, make sure to download the Windows PE add-on as well.</p>
 <p>Start by running the ADK installer (adksetup.exe). Select a path where the ADK will be installed (as before we will be using the ConfigMgr disk) then press “Next”.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK1.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK1.png" alt=""></p>
 <p>Select at least the following 4 features and click “Install”.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK2.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK2.png" alt=""></p>
 <p>The download is around 850MB and could take a while depending on internet speed.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK3.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK3.png" alt=""></p>
 <p>Once the ADK is installed we need to install the Windows PE add-on (adkwinpesetup.exe).</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK4.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK4.png" alt=""></p>
 <p>There is only one option so make sure that Windows PE is selected.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK5.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK5.png" alt=""></p>
 <p>The Windows PE add-on is 5.7GB and could take a while depending on internet speed.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK6.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK6.png" alt=""></p>
 <h3 id="creating-the-system-management-container">Creating the System Management Container</h3>
 <p>The System Management Container is where Configuration Manager will publish site information in Active Directory. This information will be used by clients and servers joined to Active Directory to find the Configuration Manager server. Below is a PowerShell script that will automatically create the Management Container in Active Directory.</p>
 <p><strong>Note:</strong>  These steps need to be performed on LABADM01, where we earlier installed the required Active Directory tools. If you decided not to install a management server, then install the required administration tools on LABCM01. See the earlier post on  <a href="">Installing a Management Server</a>  for how to install the tools.</p>
@@ -180,20 +180,20 @@ New<span class="token operator">-</span>SmbShare <span class="token operator">-<
 </code></pre>
 <p>The Management Container can also be created/verified manually by performing the following steps:</p>
 <p>Open ADSI Edit in Administrative Tools, from the Control Panel or Start Menu.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI1.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI1.png" alt=""></p>
 <p>Right click on ADSI Edit and select “Connect To”, leave the defaults and press “OK”.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI3.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI3.png" alt=""></p>
 <p>Locate CN=System and see if the CN=System Management container is present. If not, right click on CN=System and select New -&gt; Object.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI2.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI2.png" alt=""></p>
 <p>Select “Container” from the list and click “Next”.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI4.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI4.png" alt=""></p>
 <p>Type “System Management” into the value field. Make sure to spell this correctly or else it won’t work.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI5.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI5.png" alt=""></p>
 <p>Once the System Management container is created right click on it and select “Properties”, then select the Security tab. Add LABCM01 (remember to add Computer as an object type) and give it Full Control.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI6.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI6.png" alt=""></p>
 <p>Click on Advanced to open the Advanced Security Settings page. Find LABCM01 in the list and click edit.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI7.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI7.png" alt=""></p>
 <p>Under “Applies to” select “This object and all descendant objects”. Press “OK” and apply the settings. Close the remaining security windows.</p>
-<p><img src="https://github.com/albert-projects/home-lab/blob/c01fe118f574cad1842b2b9ff17410e023d7eefb/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI8.png" alt=""></p>
+<p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI8.png" alt=""></p>
 <p>We have now installed all of the prerequisites required,  <a href="">in the next post we will finally be installing Configuration Manager</a>. Make sure that the server is restarted as there have been a lot of changes made.</p>
 
