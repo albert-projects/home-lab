@@ -3,14 +3,14 @@
 
 ---
 
-<p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore Configuration Manager further. See  <a href="">Part 1</a>  for an overview of the LAB environment.</p>
+<p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore Configuration Manager further. See  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1</a>  for an overview of the LAB environment.</p>
 <p>Last time we got our Domain Controller up and running and in this post we will install a Management server for administrations purposes. This is an optional step in the series, but it makes life a lot easier having a single server with all the required management tools. LABADM01 should be used for this purpose and should only have the operating system installed.</p>
 <p>Quick Jump:<br>
-<a href="">Part 1 – Overview and Domain Controller installation</a><br>
-<a href="">Part 2 – Management Server Installation</a><br>
-<a href="">Part 3 – Installing SQL Server</a><br>
-<a href="">Part 4 – Configuration Manager Prerequisites</a><br>
-<a href="">Part 5 – Installing Configuration Manager</a></p>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1 – Overview and Domain Controller installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-2-Installing-A-Management-Server/Installing-A-Management-Server.md">Part 2 – Management Server Installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-3-Installing-SQL-Server/Installing-SQL-Server.md">Part 3 – Installing SQL Server</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/Configuration-Manager-Prerequisites.md">Part 4 – Configuration Manager Prerequisites</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-5-Installing-Configuration-Manager/Installing-Configuration-Manager.md">Part 5 – Installing Configuration Manager</a></p>
 <h3 id="basic-server-configuration">Basic Server Configuration</h3>
 <p>Since setting up the management server is rather straight forward and an optional component in the series, we will automate the process with PowerShell. Like before we will setup the networking then install the required management tools.</p>
 <p>Issue the commands below to set the computers IP address or specify it manually.</p>
@@ -52,5 +52,5 @@ New<span class="token operator">-</span>ADOrganizationalUnit <span class="token 
 <span class="token punctuation">}</span>
 Remove<span class="token operator">-</span>ADOrganizationalUnit <span class="token operator">-</span>Identity <span class="token string">"OU=LAB,DC=LAB,DC=local"</span> <span class="token operator">-</span>Recursive <span class="token operator">-</span>Confirm:<span class="token boolean">$false</span>
 </code></pre>
-<p>In  <a href="">part 3 we will be installing SQL Server</a>  to host the Configuration Manager database.</p>
+<p>In  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-3-Installing-SQL-Server/Installing-SQL-Server.md">part 3 we will be installing SQL Server</a>  to host the Configuration Manager database.</p>
 
