@@ -3,16 +3,16 @@
 
 ---
 
-<p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore SCCM further. See  <a href="">Part 1</a>  for an overview of the LAB environment.</p>
+<p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore SCCM further. See  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1</a>  for an overview of the LAB environment.</p>
 <p>In this final post we will extend the Active Directory Schema and install Configuration Manger.</p>
 <p>Quick Jump:<br>
-<a href="">Part 1 – Overview and Domain Controller installation</a><br>
-<a href="">Part 2 – Management Server Installation</a><br>
-<a href="">Part 3 – Installing SQL Server</a><br>
-<a href="">Part 4 – Configuration Manager Prerequisites</a><br>
-<a href="">Part 5 – Installing Configuration Manager</a></p>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1 – Overview and Domain Controller installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-2-Installing-A-Management-Server/Installing-A-Management-Server.md">Part 2 – Management Server Installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-3-Installing-SQL-Server/Installing-SQL-Server.md">Part 3 – Installing SQL Server</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/Configuration-Manager-Prerequisites.md">Part 4 – Configuration Manager Prerequisites</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-5-Installing-Configuration-Manager/Installing-Configuration-Manager.md">Part 5 – Installing Configuration Manager</a></p>
 <h3 id="obtain-software">Obtain Software</h3>
-<p>In  <a href="">Part 1</a>  it was mentioned where software can be obtained. In case you have not acquired the Configuration Manager setup files, they are available from  <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection">Microsoft Evaluation Center</a>.</p>
+<p>In  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1</a>  it was mentioned where software can be obtained. In case you have not acquired the Configuration Manager setup files, they are available from  <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection">Microsoft Evaluation Center</a>.</p>
 <p>Open the SC_Configmgr_SCEP_1902.exe self-extracting file and unzip the files to the Content (F:) drive.</p>
 <p><img src="https://github.com/albert-projects/home-lab/blob/9443a0eb6953bc0de1ef3b02daa4b04953609a1a/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-5-Installing-Configuration-Manager/ConfigMgr1.png" alt=""></p>
 <h3 id="cmtrace">CMTrace</h3>

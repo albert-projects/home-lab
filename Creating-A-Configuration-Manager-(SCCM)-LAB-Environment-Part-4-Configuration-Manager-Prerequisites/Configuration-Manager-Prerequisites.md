@@ -3,13 +3,13 @@
 
 ---
 
-<p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore Configuration Manager further. See  <a href="">Part 1</a>  for an overview of the LAB environment.</p>
+<p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore Configuration Manager further. See  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1</a>  for an overview of the LAB environment.</p>
 <p>Quick Jump:<br>
-<a href="">Part 1 – Overview and Domain Controller installation</a><br>
-<a href="">Part 2 – Management Server Installation</a><br>
-<a href="">Part 3 – Installing SQL Server</a><br>
-<a href="">Part 4 – Configuration Manager Prerequisites</a><br>
-<a href="">Part 5 – Installing Configuration Manager</a></p>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1 – Overview and Domain Controller installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-2-Installing-A-Management-Server/Installing-A-Management-Server.md">Part 2 – Management Server Installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-3-Installing-SQL-Server/Installing-SQL-Server.md">Part 3 – Installing SQL Server</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/Configuration-Manager-Prerequisites.md">Part 4 – Configuration Manager Prerequisites</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-5-Installing-Configuration-Manager/Installing-Configuration-Manager.md">Part 5 – Installing Configuration Manager</a></p>
 <p>In this post we will install and configure all the prerequisites required to install Configuration Manager. Make sure the server (LABCM01) is restarted after completing all these tasks.</p>
 <h3 id="local-admin-rights">Local Admin Rights</h3>
 <p>The Configuration Manager server needs to be a local administrator, use the PowerShell script below to make LABCM01 part of the local Administrators group or add it manually using Computer Management.</p>
@@ -154,7 +154,7 @@ New<span class="token operator">-</span>SmbShare <span class="token operator">-<
 <p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADK6.png" alt=""></p>
 <h3 id="creating-the-system-management-container">Creating the System Management Container</h3>
 <p>The System Management Container is where Configuration Manager will publish site information in Active Directory. This information will be used by clients and servers joined to Active Directory to find the Configuration Manager server. Below is a PowerShell script that will automatically create the Management Container in Active Directory.</p>
-<p><strong>Note:</strong>  These steps need to be performed on LABADM01, where we earlier installed the required Active Directory tools. If you decided not to install a management server, then install the required administration tools on LABCM01. See the earlier post on  <a href="">Installing a Management Server</a>  for how to install the tools.</p>
+<p><strong>Note:</strong>  These steps need to be performed on LABADM01, where we earlier installed the required Active Directory tools. If you decided not to install a management server, then install the required administration tools on LABCM01. See the earlier post on  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-2-Installing-A-Management-Server/Installing-A-Management-Server.md">Installing a Management Server</a>  for how to install the tools.</p>
 <pre class=" language-powershell"><code class="prism  language-powershell"><span class="token variable">$CMServer</span> = <span class="token string">"LABCM01"</span>
 <span class="token keyword">try</span>
 <span class="token punctuation">{</span>
@@ -195,5 +195,5 @@ New<span class="token operator">-</span>SmbShare <span class="token operator">-<
 <p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI7.png" alt=""></p>
 <p>Under “Applies to” select “This object and all descendant objects”. Press “OK” and apply the settings. Close the remaining security windows.</p>
 <p><img src="https://github.com/albert-projects/home-lab/blob/16cc4642778941f956f39704a2f6ffd482d6a4e3/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/ADSI8.png" alt=""></p>
-<p>We have now installed all of the prerequisites required,  <a href="">in the next post we will finally be installing Configuration Manager</a>. Make sure that the server is restarted as there have been a lot of changes made.</p>
+<p>We have now installed all of the prerequisites required,  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-5-Installing-Configuration-Manager/Installing-Configuration-Manager.md">in the next post we will finally be installing Configuration Manager</a>. Make sure that the server is restarted as there have been a lot of changes made.</p>
 

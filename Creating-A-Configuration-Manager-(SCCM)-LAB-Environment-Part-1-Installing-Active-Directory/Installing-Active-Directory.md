@@ -6,11 +6,11 @@
 <h3 id="overview">Overview</h3>
 <p>In these series of posts, we will go through the steps required to install Configuration Manager in a simple LAB environment. The LAB environment will be referenced in future posts as we explore Configuration Manager further. Since Hyper-V is nicely integrated in Windows 10 we will be using that to create the Virtual Machines, but it’s possible to use other software such as VMWare Workstation, VirtualBox, Parallels etc. All of the Configuration Manager Roles and SQL Server will be installed on the same server, this is also a possible scenario that could be used in production for smaller environments. Below is a quick overview of how the LAB will be setup.</p>
 <p>Quick Jump:<br>
-<a href="">Part 1 – Overview and Domain Controller installation</a><br>
-<a href="">Part 2 – Management Server Installation</a><br>
-<a href="">Part 3 – Installing SQL Server</a><br>
-<a href="">Part 4 – Configuration Manager Prerequisites</a><br>
-<a href="">Part 5 – Installing Configuration Manager</a></p>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/Installing-Active-Directory.md">Part 1 – Overview and Domain Controller installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-2-Installing-A-Management-Server/Installing-A-Management-Server.md">Part 2 – Management Server Installation</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-3-Installing-SQL-Server/Installing-SQL-Server.md">Part 3 – Installing SQL Server</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-4-Configuration-Manager-Prerequisites/Configuration-Manager-Prerequisites.md">Part 4 – Configuration Manager Prerequisites</a><br>
+<a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-5-Installing-Configuration-Manager/Installing-Configuration-Manager.md">Part 5 – Installing Configuration Manager</a></p>
 <p><img src="https://github.com/albert-projects/homelab/blob/58cf4a1dc824ea2e9a49bf57549bf656d92bf983/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/CreatingaCo1.png" alt=""></p>
 <p>The lab will consist of the following virtual machines:</p>
 <p>LABRTR01 – Router</p>
@@ -180,5 +180,5 @@ Install<span class="token operator">-</span>ADDSForest <span class="token operat
 <p>Next, right click on the server name and select Properties. Select the Forwarders tab and add one or more external DNS servers. In this example Cloudflare and Google’s public DNS servers are used, but its possible to use others such as your ISP.</p>
 <p><img src="https://github.com/albert-projects/homelab/blob/58cf4a1dc824ea2e9a49bf57549bf656d92bf983/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-1-Installing-Active-Directory/CreatingaCo24.png" alt=""></p>
 <p>Verify that DNS is now working by attempting to resolve an external domain such as <a href="http://google.com">google.com</a>, this can be done by issuing the command: nslookup <a href="http://google.com">google.com</a> or ping <a href="http://google.com">google.com</a> from a command prompt.</p>
-<p>That’s it for this post,  <a href="">in the next part we will be installing the Management Server LABADM01</a>, joining it to the domain and installing our management tools so that we can use LABADM01 to administer the other servers in our domain.</p>
+<p>That’s it for this post,  <a href="https://github.com/albert-projects/home-lab/blob/f2fb331f8a77373e8e5ed5e4cbe77318c04fcf45/Creating-A-Configuration-Manager-(SCCM)-LAB-Environment-Part-2-Installing-A-Management-Server/Installing-A-Management-Server.md">in the next part we will be installing the Management Server LABADM01</a>, joining it to the domain and installing our management tools so that we can use LABADM01 to administer the other servers in our domain.</p>
 
